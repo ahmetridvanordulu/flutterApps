@@ -11,7 +11,8 @@ class homeScreen extends StatefulWidget {
 }
 
 class _homeScreenState extends State<homeScreen> {
-  TextStyle yazi = TextStyle(fontSize: 20,fontWeight: FontWeight.bold,color: Colors.redAccent);
+  TextStyle yazi = TextStyle(
+      fontSize: 20, fontWeight: FontWeight.bold, color: Colors.blueAccent);
   List<dynamic> kullaniciListesi = [];
 
   @override
@@ -25,13 +26,18 @@ class _homeScreenState extends State<homeScreen> {
         itemBuilder: (context, index) {
           final kullanici = kullaniciListesi[index];
           var mail = kullanici["email"];
+          var resmi = kullanici["picture"]["large"];
+          var name = kullanici["name"]["first"];
+
+          return ListTile(
+            leading: Image.network(resmi), //11:14
+            title: Text(name.toString(), style: yazi),
+            subtitle: Text(mail,style: yazi),
 
 
-          return ListTile( // 8:57
-                  leading: Text((index + 1).toString()),
-                  title: Text(mail,style: yazi),
           );
-      },),
+        },
+      ),
       floatingActionButton: FloatingActionButton(
         onPressed: kullanicilariCek,
       ),
@@ -39,7 +45,6 @@ class _homeScreenState extends State<homeScreen> {
   }
 
   void kullanicilariCek() async {
-
     var url = await Uri.parse("https://randomuser.me/api/?results=50");
     var cevap = await internetPaketi.get(url);
     var badisi = cevap.body;
@@ -47,9 +52,6 @@ class _homeScreenState extends State<homeScreen> {
 
     kullaniciListesi = await jsonadonmushali["results"];
 
-    setState(() {
-
-    });
-
+    setState(() {});
   }
 }

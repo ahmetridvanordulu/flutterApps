@@ -1,6 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+
+import 'state_data.dart';
+
 // 3:45
-void main() => runApp(MyApp());
+void main() =>
+    runApp(ChangeNotifierProvider<StateVerisi>(create: (BuildContext context) {
+      return StateVerisi();
+    },
+        child: MyApp()));
 
 class MyApp extends StatelessWidget {
   @override
@@ -37,6 +45,7 @@ class MyHomePage extends StatelessWidget {
 class SolWidgetA extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    String tepedeki = Provider.of<StateVerisi>(context).ProSehir;
     return Container(
         color: Colors.yellow,
         child: Column(
@@ -46,7 +55,7 @@ class SolWidgetA extends StatelessWidget {
               style: TextStyle(fontSize: 20),
             ),
             Text(
-              'Sehir: ..... ',
+              'Sehir: 11 $tepedeki  ',
               style: TextStyle(fontSize: 20),
             )
           ],
@@ -91,6 +100,7 @@ class SagWidgetB extends StatelessWidget {
 class SagWidgetC extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    var cagir = Provider.of<StateVerisi>(context).degistir;
     return Container(
       color: Colors.white,
       height: 150,
@@ -101,10 +111,13 @@ class SagWidgetC extends StatelessWidget {
           style: TextStyle(fontSize: 20),
         ),
         Text(
-          'Şehir: ... ',
+          'Şehir: ...${Provider.of<StateVerisi>(context).ProSehir} ',
           style: TextStyle(fontSize: 20),
         ),
-        TextField(onChanged: null)
+        TextField(onChanged: (value) {
+            cagir(value); //26:52 sadece dinliyoduk
+
+        },)
       ]),
     );
   }
