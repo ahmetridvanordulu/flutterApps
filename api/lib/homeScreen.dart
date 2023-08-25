@@ -30,7 +30,7 @@ class _homeScreenState extends State<homeScreen> {
           var name = kullanici["name"]["first"];
 
           return ListTile(
-            leading: Image.network(resmi), //11:14
+            leading: Image.network(resmi),
             title: Text(name.toString(), style: yazi),
             subtitle: Text(mail,style: yazi),
 
