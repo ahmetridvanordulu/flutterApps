@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:getitdone/screens/home_page.dart';
 
 void main() {
   runApp(MyApp());
@@ -18,10 +19,10 @@ class MyApp extends StatelessWidget {
          appBarTheme: AppBarTheme(color: Colors.deepOrange),
          visualDensity: VisualDensity.adaptivePlatformDensity,
          textTheme: TextTheme(
-           titleMedium: TextStyle(color: Colors.white),displaySmall: TextStyle(color: Colors.white)
+           headlineLarge: TextStyle(color: Colors.white)
          )//6:48
        ),
-          home: null,
+          home: HomePage(),
     );
   }
 }
