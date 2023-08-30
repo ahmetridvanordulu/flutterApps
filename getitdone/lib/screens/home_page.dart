@@ -39,7 +39,7 @@ class HomePage extends StatelessWidget {
                     borderRadius: BorderRadius.all(Radius.elliptical(300,100))),
                 child: Padding(
                   padding: const EdgeInsets.only(top: 65,bottom: 65),
-                  child: ListView.builder(itemCount: 3,itemBuilder: (context, index) => ItemCard(),),
+                  child: ListView.builder(itemCount: 3,itemBuilder: (context, index) => ItemCard(title: ),),
                 ),
               ),
             ),
