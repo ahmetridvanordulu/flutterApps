@@ -13,19 +13,20 @@ class ana extends StatelessWidget {
     return  MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        scaffoldBackgroundColor: Colors.red,
-        primarySwatch: Colors.red,
-        primaryColor: Colors.red,
+        scaffoldBackgroundColor: Colors.cyan,
+        primarySwatch: Colors.cyan,
+        primaryColor: Colors.cyan,
         appBarTheme:  AppBarTheme(
-          titleTextStyle: TextStyle(color: Colors.black,fontSize: 23),
-          color: Colors.redAccent
+          titleTextStyle: TextStyle(color: Colors.white,fontSize: 30),
+          color: Colors.cyan
         ),
 
-        buttonTheme: const ButtonThemeData(buttonColor: Colors.red),
+        buttonTheme: const ButtonThemeData(buttonColor: Colors.white),
         textTheme: const TextTheme(
 
            titleMedium: TextStyle(
-             color: Colors.black
+             color: Colors.white,
+             fontSize: 35,fontWeight: FontWeight.bold
            ),
           titleLarge: TextStyle(
             color: Colors.white
@@ -34,7 +35,7 @@ class ana extends StatelessWidget {
         visualDensity: VisualDensity.adaptivePlatformDensity,
           floatingActionButtonTheme: const FloatingActionButtonThemeData(
             elevation: 4,
-            backgroundColor: Colors.black
+            backgroundColor: Colors.cyan
           )
       ),
       home: const ana2(),

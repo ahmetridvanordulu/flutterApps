@@ -13,13 +13,34 @@ class ana2 extends StatelessWidget {
         ),
       ),
       body: Column(
-        children: [Container(), Container()],
+        children: [
+          Expanded(
+            flex: 1,
+            child: Container(
+              margin: EdgeInsets.all(30),
+              child: Text("5 Items",
+                  style: Theme.of(context).textTheme.titleMedium),
+            ),
+          ),
+          Expanded(
+            flex: 7,
+            child: Padding(
+              padding: const EdgeInsets.all(10.0),
+              child: Container(
+                height: MediaQuery.of(context).size.height * 0.7,
+                decoration: BoxDecoration(
+                    color: Colors.white,
+                    borderRadius: BorderRadius.circular(100)),
+              ),
+            ),
+          )
+        ],
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: () {
-
-        },
-          child: Icon(Icons.plus_one_sharp,), // 11:23
+        onPressed: () {},
+        child: Icon(
+          Icons.plus_one_sharp,
+        ), // 11:23
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
     );
