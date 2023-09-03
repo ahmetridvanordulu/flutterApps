@@ -1,10 +1,14 @@
+import 'package:done/models/items_data.dart';
 import 'package:flutter/material.dart';
+import '../widgets/item_card.dart';
 
 class ana2 extends StatelessWidget {
   const ana2({super.key});
 
   @override
   Widget build(BuildContext context) {
+
+
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
@@ -27,6 +31,10 @@ class ana2 extends StatelessWidget {
             child: Padding(
               padding: const EdgeInsets.all(10.0),
               child: Container(
+                child: Padding(
+                  padding: const EdgeInsets.only(top: 20,left: 50,right: 50,bottom: 20),
+                  child: ListView.builder(itemBuilder: (context, index) => ItemCard(),itemCount:3), // 10:53
+                ),
                 height: MediaQuery.of(context).size.height * 0.7,
                 decoration: BoxDecoration(
                     color: Colors.white,

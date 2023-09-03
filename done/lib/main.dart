@@ -25,8 +25,8 @@ class ana extends StatelessWidget {
         textTheme: const TextTheme(
 
            titleMedium: TextStyle(
-             color: Colors.white,
-             fontSize: 35,fontWeight: FontWeight.bold
+             color: Colors.red,
+             fontSize: 30,fontWeight: FontWeight.bold
            ),
           titleLarge: TextStyle(
             color: Colors.white
