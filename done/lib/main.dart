@@ -1,8 +1,14 @@
+import 'package:done/models/items_data.dart';
 import 'package:done/screens/ana.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 void main() {
-  runApp(const ana());
+  runApp(ChangeNotifierProvider(
+      create: (BuildContext context) {
+        return Listem();
+      },
+      child: const ana()));
 }
 
 class ana extends StatelessWidget {
@@ -10,34 +16,23 @@ class ana extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return  MaterialApp(
+    return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        scaffoldBackgroundColor: Colors.cyan,
-        primarySwatch: Colors.cyan,
-        primaryColor: Colors.cyan,
-        appBarTheme:  AppBarTheme(
-          titleTextStyle: TextStyle(color: Colors.white,fontSize: 30),
-          color: Colors.cyan
-        ),
-
-        buttonTheme: const ButtonThemeData(buttonColor: Colors.white),
-        textTheme: const TextTheme(
-
-           titleMedium: TextStyle(
-             color: Colors.red,
-             fontSize: 30,fontWeight: FontWeight.bold
-           ),
-          titleLarge: TextStyle(
-            color: Colors.white
-          )
-        ),
-        visualDensity: VisualDensity.adaptivePlatformDensity,
+          scaffoldBackgroundColor: Colors.cyan,
+          primarySwatch: Colors.cyan,
+          primaryColor: Colors.cyan,
+          appBarTheme: AppBarTheme(
+              titleTextStyle: TextStyle(color: Colors.white, fontSize: 30),
+              color: Colors.cyan),
+          buttonTheme: const ButtonThemeData(buttonColor: Colors.white),
+          textTheme: const TextTheme(
+              titleMedium: TextStyle(
+                  color: Colors.red, fontSize: 30, fontWeight: FontWeight.bold),
+              titleLarge: TextStyle(color: Colors.white)),
+          visualDensity: VisualDensity.adaptivePlatformDensity,
           floatingActionButtonTheme: const FloatingActionButtonThemeData(
-            elevation: 4,
-            backgroundColor: Colors.cyan
-          )
-      ),
+              elevation: 4, backgroundColor: Colors.cyan)),
       home: const ana2(),
     );
   }
