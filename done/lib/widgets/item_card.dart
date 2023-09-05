@@ -20,12 +20,14 @@ class ItemCard extends StatelessWidget {
       shadowColor: Theme.of(context).primaryColor,
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(50)),
       child: ListTile(
-        title: Text("Biz aynıyız Flutter",
+        title: Text(baslik!,
             style: TextStyle(fontSize: 16, color: Colors.black87)),
         trailing: Checkbox(
           activeColor: Colors.red,
-          onChanged: null,
-          value: false,
+          onChanged: (value) {
+
+          },
+          value: yapildimi,
         ), // 5 22
       ),
     );

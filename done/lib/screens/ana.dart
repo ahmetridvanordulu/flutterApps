@@ -7,8 +7,6 @@ class ana2 extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-
-
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
@@ -32,8 +30,13 @@ class ana2 extends StatelessWidget {
               padding: const EdgeInsets.all(10.0),
               child: Container(
                 child: Padding(
-                  padding: const EdgeInsets.only(top: 20,left: 50,right: 50,bottom: 20),
-                  child: ListView.builder(itemBuilder: (context, index) => ItemCard(),itemCount:3), // 10:53
+                  padding: const EdgeInsets.only(
+                      top: 20, left: 50, right: 50, bottom: 20),
+                  child: ListView.builder(
+                      itemBuilder: (context, index) => ItemCard(
+                          baslik: Listem().itemler[index].baslik,
+                          yapildimi: Listem().itemler[index].yapildimi),
+                      itemCount: 4),
                 ),
                 height: MediaQuery.of(context).size.height * 0.7,
                 decoration: BoxDecoration(

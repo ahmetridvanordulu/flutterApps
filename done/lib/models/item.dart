@@ -1,8 +1,8 @@
-class Item{
+  class Item{
   String? baslik;
-  bool? yapildimi = false;
+  bool? yapildimi;
 
-  Item({this.baslik, this.yapildimi});
+  Item({this.baslik, this.yapildimi = false});
 
    toogleDurumu(){
     yapildimi =! yapildimi!;

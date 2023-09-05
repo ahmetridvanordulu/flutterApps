@@ -1,9 +1,13 @@
+import 'package:flutter/cupertino.dart';
+import 'package:provider/provider.dart';
+
 import 'item.dart';
 
-class Listem {
-  List<Item> itemler = [
+class Listem with ChangeNotifier{
+  final List<Item> itemler = [
     Item(baslik: "Ürünü al"),
     Item(baslik: "Vergini öde"),
-    Item(baslik: "Ödevini yap")
+    Item(baslik: "Ödevini yap"),
+    Item(baslik: "Flutter yap")
   ];
 }
