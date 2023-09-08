@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:quiz/constants.dart';
 import 'package:quiz/models/sorular_model.dart';
+import 'package:quiz/constants.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -10,11 +11,15 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
-  List<Soru> _Sorular = [
+  final List<Soru> _Sorular = [
     Soru(
-        id: "23",
-        baslik: "Sarayın masrafları ne kadar",
-        ayar: {"Saray noldu": true, "Çaldılar": false}) //  3:08
+        id: "1",
+        baslik: "3 + 3 Kaç eder",
+        ayar: {"4": false, "6": true, "11": false}),
+    Soru(             // 4:33
+        id: "2",
+        baslik: "Türkiye Cumhurbaşkanı kimdir ?",
+        ayar: {"Erdoğan": true, "Kılıçtaroğlu": false, "Akşener": true}),
   ];
 
   @override
