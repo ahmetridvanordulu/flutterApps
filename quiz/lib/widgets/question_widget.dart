@@ -7,6 +7,7 @@ class QuestionWidget extends StatelessWidget {
     final String question;
     final int indexAction;
     final int totalQuestions;
+
   @override
   Widget build(BuildContext context) {
     return Container(

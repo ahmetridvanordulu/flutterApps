@@ -19,12 +19,22 @@ class _HomeScreenState extends State<HomeScreen> {
         baslik: "3 + 3 Kaç eder",
         ayar: {"4": false, "6": true, "11": false}),
     Soru(
-
         id: "2",
         baslik: "Türkiye Cumhurbaşkanı kimdir ?",
         ayar: {"Erdoğan": true, "Kılıçtaroğlu": false, "Akşener": true}),
   ];
   int index = 0;
+
+  void nextQuestion() {
+    if (index == _Sorular.length -1) {
+      return;
+    } else {
+      setState(() {
+        index++; // https://www.youtube.com/watch?v=4jBxPyMLeVs&list=PLowRfKz1qoIII96X_sz7KyXoD9tgnDIyv&index=6
+        print(index);
+      });
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -32,7 +42,7 @@ class _HomeScreenState extends State<HomeScreen> {
     return Scaffold(
       floatingActionButton: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 30),
-        child:  NextButton(), // 6:38
+        child: NextButton(nextQuestion: nextQuestion), // 6:38
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
       backgroundColor: arkaPlan,
@@ -48,12 +58,14 @@ class _HomeScreenState extends State<HomeScreen> {
         width: double.infinity,
         child: Column(
           children: [
-            SizedBox(height: xes,),
+            SizedBox(
+              height: xes,
+            ),
             QuestionWidget(
                 question: _Sorular[index].baslik!,
                 indexAction: index,
                 totalQuestions: _Sorular.length),
-             Divider(
+            Divider(
               color: dogalRenk,
               height: xes,
             )
