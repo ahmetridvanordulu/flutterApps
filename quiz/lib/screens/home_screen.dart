@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:quiz/ayarlarKart%C4%B1.dart';
 import 'package:quiz/constants.dart';
 import 'package:quiz/models/sorular_model.dart';
-import 'package:quiz/constants.dart';
 import 'package:quiz/widgets/next_button.dart';
 import 'package:quiz/widgets/question_widget.dart';
 
@@ -17,7 +17,7 @@ class _HomeScreenState extends State<HomeScreen> {
     Soru(
         id: "1",
         baslik: "3 + 3 Kaç eder",
-        ayar: {"4": false, "6": true, "11": false}),
+        ayar: {"4": false, "6": true, "11": false, "12": true}),
     Soru(
         id: "2",
         baslik: "Türkiye Cumhurbaşkanı kimdir ?",
@@ -26,11 +26,11 @@ class _HomeScreenState extends State<HomeScreen> {
   int index = 0;
 
   void nextQuestion() {
-    if (index == _Sorular.length -1) {
+    if (index == _Sorular.length - 1) {
       return;
     } else {
       setState(() {
-        index++; // https://www.youtube.com/watch?v=4jBxPyMLeVs&list=PLowRfKz1qoIII96X_sz7KyXoD9tgnDIyv&index=6
+        index++;
         print(index);
       });
     }
@@ -68,7 +68,12 @@ class _HomeScreenState extends State<HomeScreen> {
             Divider(
               color: dogalRenk,
               height: xes,
-            )
+            ),
+            SizedBox(
+              height: xes,
+            ),
+            for (int i = 0; i < _Sorular[index].ayar!.length; i++)
+              aylarKarti(option: _Sorular[index].ayar!.keys.toList()[i]),
           ],
         ),
       ),
