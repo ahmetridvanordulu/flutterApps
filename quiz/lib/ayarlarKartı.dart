@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class aylarKarti extends StatelessWidget {
-  aylarKarti({super.key, required this.option,required this.renk,required this.degissin});
+class ayarlarKarti extends StatelessWidget {
+  ayarlarKarti({super.key, required this.option,required this.renk,required this.degissin});
 
   String option;
   Color renk;

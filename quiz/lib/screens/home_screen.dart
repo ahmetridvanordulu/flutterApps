@@ -33,6 +33,7 @@ class _HomeScreenState extends State<HomeScreen> {
     } else {
       setState(() {
         index++;
+        dokunuldumu = false;
         print(index);
       });
     }
@@ -40,7 +41,7 @@ class _HomeScreenState extends State<HomeScreen> {
 
   renkDegistir(){
     setState(() {
-      dokunuldumu = true; // 12:39
+      dokunuldumu = true;
     });
   }
 
@@ -83,7 +84,7 @@ class _HomeScreenState extends State<HomeScreen> {
             for (int i = 0;
                 i < _Sorular[index].ayar!.length;
                 i++) // ? eyer öyleyse yap : değlse şunu yap
-              aylarKarti(
+              ayarlarKarti(
                   option: _Sorular[index].ayar!.keys.toList()[i],
                   renk: dokunuldumu ? _Sorular[index].ayar!.values.toList()[i] == true
                       ? dogruCevap
