@@ -38,6 +38,7 @@ class bas extends StatelessWidget {
 
 class TaskItem extends StatelessWidget {
   String Tasks = "";
+  bool? dokunuldumu = false;
 
   TaskItem({super.key, required this.Tasks});
 
@@ -45,7 +46,10 @@ class TaskItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return Row(
       children: [
-        Checkbox(value: false, onChanged: null),
+        Checkbox(
+          value: dokunuldumu,
+          onChanged: (value) => dokunuldumu = value, // 4:44
+        ),
         Text(Tasks),
       ],
     );
