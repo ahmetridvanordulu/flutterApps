@@ -36,11 +36,17 @@ class bas extends StatelessWidget {
   }
 }
 
-class TaskItem extends StatelessWidget {
+class TaskItem extends StatefulWidget {
   String Tasks = "";
-  bool? dokunuldumu = false;
 
   TaskItem({super.key, required this.Tasks});
+
+  @override
+  State<TaskItem> createState() => _TaskItemState();
+}
+
+class _TaskItemState extends State<TaskItem> {
+  bool? dokunuldumu = false;
 
   @override
   Widget build(BuildContext context) {
@@ -48,9 +54,11 @@ class TaskItem extends StatelessWidget {
       children: [
         Checkbox(
           value: dokunuldumu,
-          onChanged: (value) => dokunuldumu = value, // 4:44
+          onChanged: (newValue) => setState(() {
+            dokunuldumu = newValue;
+          }), // 4:44
         ),
-        Text(Tasks),
+        Text(widget.Tasks),
       ],
     );
   }
