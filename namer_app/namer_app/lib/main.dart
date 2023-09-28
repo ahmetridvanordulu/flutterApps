@@ -19,7 +19,7 @@ class MyApp extends StatelessWidget {
         theme: ThemeData(
           useMaterial3: true,
           colorScheme:
-              ColorScheme.fromSeed(seedColor: Color.fromRGBO(0, 255, 0, 1.0)),
+              ColorScheme.fromSeed(seedColor: Color.fromRGBO(66, 13, 0, 1)),
         ),
         home: MyHomePage(),
       ),
@@ -73,11 +73,18 @@ class BigCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final tema = Theme.of(context);
+    final yaziSekli = tema.textTheme.displayMedium!
+        .copyWith(color: tema.colorScheme.onPrimary);
     return Card(
+      elevation: 5,
       color: tema.colorScheme.primary,
       child: Padding(
         padding: const EdgeInsets.all(20.0),
-        child: Text(pair.asLowerCase),
+        child: Text(
+          pair.asLowerCase,
+          style: yaziSekli,
+          semanticsLabel: " ${pair.second}",
+        ),
       ),
     );
   }
