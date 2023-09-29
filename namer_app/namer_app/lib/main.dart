@@ -43,20 +43,23 @@ class MyHomePage extends StatelessWidget {
     var pair = appState.current;
     final tema2 = Theme.of(context);
     return Scaffold(
-      body: Column(
-        children: [
-          Text('A random AWESOME idea:'),
-          BigCard(pair: pair),
-          ElevatedButton(
-            style: ElevatedButton.styleFrom(
-                backgroundColor: tema2
-                    .cardColor), // https://codelabs.developers.google.com/codelabs/flutter-codelab-first#4 TextThemede kaldın.
-            onPressed: () {
-              appState.getNext();
-            },
-            child: Text('Next'),
-          ),
-        ],
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            BigCard(pair: pair),
+            SizedBox(
+              height: 30,
+            ),
+            ElevatedButton(
+              style: ElevatedButton.styleFrom(backgroundColor: tema2.cardColor),
+              onPressed: () {
+                appState.getNext();
+              },
+              child: Text('Next'),
+            ),
+          ],
+        ),
       ),
     );
   }
@@ -83,7 +86,8 @@ class BigCard extends StatelessWidget {
         child: Text(
           pair.asLowerCase,
           style: yaziSekli,
-          semanticsLabel: " ${pair.second}",
+          semanticsLabel:
+              "${pair.first} ${pair.second}", // https://codelabs.developers.google.com/codelabs/flutter-codelab-first#5
         ),
       ),
     );
