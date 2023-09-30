@@ -21,9 +21,16 @@ class MyApp extends StatelessWidget {
           colorScheme:
               ColorScheme.fromSeed(seedColor: Color.fromRGBO(66, 13, 0, 1)),
         ),
-        home: MyHomePage(),
+        home: GeneratorPage(),
       ),
     );
+  }
+}
+
+class MyHomePage extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(); // https://codelabs.developers.google.com/codelabs/flutter-codelab-first#6 NavigationRail
   }
 }
 
@@ -47,7 +54,7 @@ class MyAppState extends ChangeNotifier {
   }
 }
 
-class MyHomePage extends StatelessWidget {
+class GeneratorPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     var appState = context.watch<MyAppState>();
