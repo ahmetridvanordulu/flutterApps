@@ -8,19 +8,23 @@ class FavoritesPage extends StatelessWidget {
     var appState = context.watch<MyAppState>();
 
     if (appState.favorites1.isEmpty) {
-      // https://codelabs.developers.google.com/codelabs/flutter-codelab-first#7
       return Center(
         child: Text('No favorites yet.'),
       );
     }
 
-    return Scaffold(
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [],
+    return ListView(
+      children: [
+        Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: Text("You have ${appState.favorites1.length} favorites "),
         ),
-      ),
+        for (var pair in appState.favorites1)
+          ListTile(
+            leading: Icon(Icons.favorite),
+            title: Text(pair.asLowerCase),
+          ),
+      ],
     );
   }
 }
